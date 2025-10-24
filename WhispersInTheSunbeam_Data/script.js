@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.novel-container').insertBefore(characterContainer, dialogueBox);
     }
 
-    // Обновление персонажей
+    //Обновление персонажей
     function updateCharacters(charactersData) {
         const characterContainer = document.getElementById('characterContainer');
         if (!characterContainer) {
@@ -70,16 +70,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return updateCharacters(charactersData);
         }
 
-        // чищаем предыдущих персонажей
+        //Очищаем предыдущих персонажей
         characterContainer.innerHTML = '';
 
-        // Добавляем новых персонажей
+        //Добавляем новых персонажей
         charactersData.forEach(character => {
             const characterDiv = document.createElement('div');
             characterDiv.className = 'character';
             
-            const horizontalPos = character.pos[0]; // X в %
-            const verticalPos = character.pos[1];   // Y в %
+            const horizontalPos = character.pos[0];
+            const verticalPos = character.pos[1];
             const rotation = character.rotation || 0;
             const size = character.size || 100;
             
@@ -90,14 +90,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const characterEmoji = document.createElement('div');
             characterEmoji.className = 'character-emoji';
             
-            // Применяем размер
+            //Применяем размер
             const scale = size / 100;
             characterEmoji.style.transform = `scale(${scale})`;
             
             characterEmoji.textContent = character.getEmoji();
             characterEmoji.title = `${character.name} (${horizontalPos}%, ${verticalPos}%)`;
             
-            // Добавляем подпись с именем персонажа
+            //Добавляем подпись с именем персонажа
             const nameLabel = document.createElement('div');
             nameLabel.className = 'character-name';
             nameLabel.textContent = character.name;
@@ -123,10 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCharacters(currentData.characters);
         
         } else { //Обновление страницы при конце
-            authorColors = new Map();
-            title = '';
-            story = [];
-            currentDialogueIndex = 0;
             location.reload();
         }
     }

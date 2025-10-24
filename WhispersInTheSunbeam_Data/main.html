@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визуальная новелла</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Визуальная новелла</h1>
+        
+        <div id="dropZone" class="drop-zone">
+            <div class="drop-content">
+                <div class="drop-icon">📁</div>
+                <p>Перетащите файл сюда</p>
+                <small>Файл должен быть в формате .txt</small>
+            </div>
+        </div>
+
+        <div id="novelContainer" class="novel-container hidden">
+            <div id="dialogueBox" class="dialogue-box">
+                <div id="authorName" class="author-name"></div>
+                <div id="dialogueText" class="dialogue-text"></div>
+            </div>
+            <button id="nextButton" class="next-button">Далее</button>
+        </div>
+    </div>
+    <script src="character.js"></script>
+    <script src="areaData.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
